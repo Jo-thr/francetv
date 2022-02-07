@@ -1,0 +1,53 @@
+{
+  "data": [
+    {
+      "id": "4442cd18-f35e-446c-b024-3d8959ae2a85",
+      "type": "tests",
+      "lang": "fr",
+      "data": {
+        "title": "Minus officia dolores est omnis dolorem cupiditate non.",
+        "slug": "in-modi-accusamus-at-eveniet",
+        "content": "filler",
+        "status": "open"
+      },
+      "meta": {
+        "slug": {
+          "fr": "in-modi-accusamus-at-eveniet",
+          "en": "dicta-quia-est-est-sequi-deleniti-doloremque-voluptatibus-nisi"
+        }
+      }
+    },
+    {
+      "id": "5e416a2d-1560-47d7-a501-91724f0887d7",
+      "type": "tests",
+      "lang": "fr",
+      "data": {
+        "title": "Nemo nemo magni quia inventore. Sit velit recusandae ad.",
+        "slug": "iusto-minima-quo-deleniti-excepturi-eaque-hic-sit-est",
+        "content": "filler",
+        "status": "open"
+      },
+      "meta": {
+        "slug": {
+          "fr": "iusto-minima-quo-deleniti-excepturi-eaque-hic-sit-est",
+          "en": "illum-harum-quaerat-harum-incidunt"
+        }
+      }
+    }
+  ],
+  "links": {
+    "first": "http://api.localhost/api/tests?page=1",
+    "last": "http://api.localhost/api/tests?page=2",
+    "prev": null,
+    "next": "http://api.localhost/api/tests?page=2"
+  },
+  "meta": {
+    "current_page": 1,
+    "from": 1,
+    "last_page": 2,
+    "path": "http://api.localhost/api/tests",
+    "per_page": 15,
+    "to": 15,
+    "total": 20
+  }
+}

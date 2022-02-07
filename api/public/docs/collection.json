@@ -1,0 +1,564 @@
+{
+    "variables": [],
+    "info": {
+        "name": "FranceTV Lab API",
+        "_postman_id": "7908c1a3-144d-489c-82ad-19c046653afa",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Heading",
+            "description": "\nGet heading collection",
+            "item": [
+                {
+                    "name": "Get heading collection",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "api.localhost\/",
+                            "path": "api\/headings",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Layout",
+            "description": "\nGet one layout",
+            "item": [
+                {
+                    "name": "Get one layout by name",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "api.localhost\/",
+                            "path": "api\/layouts\/:name",
+                            "query": [
+                                {
+                                    "key": "lang",
+                                    "value": "numquam",
+                                    "description": "To get the Layout translated",
+                                    "disabled": false
+                                }
+                            ],
+                            "variable": [
+                                {
+                                    "id": "name",
+                                    "key": "name",
+                                    "value": "quo",
+                                    "description": "The Name of the Layout"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Get layout collection",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "api.localhost\/",
+                            "path": "api\/layouts",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "MetaMedia",
+            "description": "\nGet metamedia collection",
+            "item": [
+                {
+                    "name": "Get MetaMedia collection",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "api.localhost\/",
+                            "path": "api\/meta-medias",
+                            "query": [
+                                {
+                                    "key": "page",
+                                    "value": "ut",
+                                    "description": "For pagination",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "sort=published_at",
+                                    "value": "molestias",
+                                    "description": "Sort by published date",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "sort=-published_at",
+                                    "value": "et",
+                                    "description": "Sort by published date inverses",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Post",
+            "description": "\nGet posts collection",
+            "item": [
+                {
+                    "name": "Return posts collection, paginated",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "api.localhost\/",
+                            "path": "api\/posts",
+                            "query": [
+                                {
+                                    "key": "filter[type]",
+                                    "value": "facere",
+                                    "description": "Filter by type",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "sort=published_at",
+                                    "value": "voluptatem",
+                                    "description": "Sort by published date",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "sort=-published_at",
+                                    "value": "aut",
+                                    "description": "Sort by published date inverses",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "page",
+                                    "value": "animi",
+                                    "description": "For pagination",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Get one post by slug",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "api.localhost\/",
+                            "path": "api\/posts\/:slug",
+                            "query": [
+                                {
+                                    "key": "lang",
+                                    "value": "ut",
+                                    "description": "To get the Post translated",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "page",
+                                    "value": "perspiciatis",
+                                    "description": "For pagination",
+                                    "disabled": false
+                                }
+                            ],
+                            "variable": [
+                                {
+                                    "id": "slug",
+                                    "key": "slug",
+                                    "value": "voluptate",
+                                    "description": "The Slug of the Post"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Get posts by tag, paginated",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "api.localhost\/",
+                            "path": "api\/tags\/:slug\/posts",
+                            "query": [
+                                {
+                                    "key": "lang",
+                                    "value": "ut",
+                                    "description": "To get the Posts translated",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "page",
+                                    "value": "quasi",
+                                    "description": "For pagination",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Get posts by heading, paginated",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "api.localhost\/",
+                            "path": "api\/headings\/:slug\/posts",
+                            "query": [
+                                {
+                                    "key": "lang",
+                                    "value": "et",
+                                    "description": "To get the Posts translated",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "page",
+                                    "value": "totam",
+                                    "description": "For pagination",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Tag",
+            "description": "\nGet tag collection",
+            "item": [
+                {
+                    "name": "Get tag collection, paginated",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "api.localhost\/",
+                            "path": "api\/tags",
+                            "query": [
+                                {
+                                    "key": "lang",
+                                    "value": "quo",
+                                    "description": "To get the Tags translated",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "page",
+                                    "value": "deleniti",
+                                    "description": "For pagination",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "sort=name",
+                                    "value": "laboriosam",
+                                    "description": "Sort by name",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "sort=-name",
+                                    "value": "consectetur",
+                                    "description": "Sort by name, inverse",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Test",
+            "description": "\nGet one test",
+            "item": [
+                {
+                    "name": "Get one test by name",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "api.localhost\/",
+                            "path": "api\/tests\/:slug",
+                            "query": [
+                                {
+                                    "key": "lang",
+                                    "value": "quisquam",
+                                    "description": "To get the Test translated",
+                                    "disabled": false
+                                }
+                            ],
+                            "variable": [
+                                {
+                                    "id": "slug",
+                                    "key": "slug",
+                                    "value": "assumenda",
+                                    "description": "The Slug of the Test"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Get Test collection, paginated",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "api.localhost\/",
+                            "path": "api\/tests",
+                            "query": [
+                                {
+                                    "key": "page",
+                                    "value": "eum",
+                                    "description": "For pagination",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Create a new vote associated with a token",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "api.localhost\/",
+                            "path": "api\/tests\/:slug\/votes",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"token\": \"expedita\"\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Add a new external user token",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "api.localhost\/",
+                            "path": "api\/tokens",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"token\": \"error\"\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+:root {
+  --primary: #446cb3;
+  --primary-dark: #25385C;
+  --primary-70: #4A70B9;
+  --primary-50: #38548A;
+  --primary-30: #25385C;
+  --primary-10: #121C2E;
+  --logo: #000000;
+  --sidebar-icon: #FFF;
+  --danger: #f64747;
+  --success: #049372;
+  --warning: #f7ca18;
+  --info: #00b5cc;
+}
+
+.bg-grad-sidebar {
+    background: linear-gradient(315deg, #414141 0%, #000000 74%);
+}
+
+button[dusk='update-and-continue-editing-button'], button[dusk='create-and-add-another-button'] {
+    display: none;
+}

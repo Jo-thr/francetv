@@ -1,0 +1,49 @@
+{
+  "data": [
+    {
+      "id": "70405a2f-e616-4ab3-8a3f-c970e03957ce",
+      "type": "meta-medias",
+      "position": 1,
+      "lang": "fr",
+      "data": {
+        "title": "Nesciunt saepe qui qui sunt natus culpa quidem.",
+        "url": "http://herve.net/nostrum-qui-quisquam-totam-deleniti-cum-consequatur-quis.html",
+        "image": "https://www.meta-media.fr/files/2020/08/illustration2.jpg",
+        "description": "Alias aliquam aut cumque necessitatibus. Veniam veniam odio beatae at illo. Voluptates reiciendis repellendus qui ea dolorem ut id. Ut corporis voluptas odio repudiandae reprehenderit mollitia odit.",
+        "published_at": "2020-09-10T11:18:25.000000Z",
+        "created_at": "2020-09-10T11:18:25.000000Z",
+        "updated_at": "2020-09-10T11:18:25.000000Z"
+      }
+    },
+    {
+      "id": "146316e1-c93f-450a-a394-1064f4a1be2f",
+      "type": "meta-medias",
+      "position": 2,
+      "lang": "fr",
+      "data": {
+        "title": "Quasi sed voluptas eius dolorem architecto.",
+        "url": "https://bodin.org/eum-officia-ea-est-laboriosam.html",
+        "image": "https://www.meta-media.fr/files/2020/08/illustration2.jpg",
+        "description": "Id voluptas magni in. Numquam quisquam maxime consequatur ut qui ut dolores eum. Est rerum quisquam et aperiam.",
+        "published_at": "2020-09-10T11:18:25.000000Z",
+        "created_at": "2020-09-10T11:18:25.000000Z",
+        "updated_at": "2020-09-10T11:18:25.000000Z"
+      }
+    }
+  ],
+  "links": {
+    "first": "http://api.localhost/api/meta-medias?page=1",
+    "last": "http://api.localhost/api/meta-medias?page=4",
+    "prev": null,
+    "next": "http://api.localhost/api/meta-medias?page=2"
+  },
+  "meta": {
+    "current_page": 1,
+    "from": 1,
+    "last_page": 4,
+    "path": "http://api.localhost/api/meta-medias",
+    "per_page": 15,
+    "to": 15,
+    "total": 50
+  }
+}

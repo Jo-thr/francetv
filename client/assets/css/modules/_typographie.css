@@ -1,0 +1,37 @@
+h1 {
+  @apply text-mobile-h1 tablet:text-desktop-h1;
+}
+
+h2 {
+  @apply font-bold text-mobile-h2 tablet:text-desktop-h2;
+}
+
+h3 {
+  @apply font-bold text-mobile-h3 tablet:text-desktop-h3;
+}
+
+h4 {
+  @apply font-bold text-mobile-h4 tablet:text-desktop-h4;
+}
+
+h5 {
+  @apply font-bold text-mobile-h5 tablet:text-desktop-h5;
+}
+
+/* .quote {
+  @apply font-bold italic text-mobile-quote tablet:text-desktop-quote;
+} */
+
+/* Common */
+
+.common-tag {
+  @apply text-common-tag text-gray-dark;
+}
+
+.common-legend {
+  @apply text-common-legend text-gray-dark;
+}
+
+.common-legend-bold {
+  @apply font-bold text-common-legend text-gray-dark;
+}

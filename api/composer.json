@@ -1,0 +1,127 @@
+{
+    "name": "ftvlab/api",
+    "type": "project",
+    "description": "FTV Lab API : Laravel Nova",
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^7.2.5",
+        "ext-json": "*",
+        "aacotroneo/laravel-saml2": "^2.1",
+        "advoor/nova-editor-js": "^2.0",
+        "benjacho/belongs-to-many-field": "dev-master",
+        "chaseconey/nova-external-image": "^0.3.0",
+        "chelout/laravel-relationship-events": "^1.4",
+        "cloudcake/nova-fixed-bars": "^1.1",
+        "digital-creative/clickable-table-row": "^0.1.5",
+        "digital-creative/conditional-container": "^1.1",
+        "dillingham/nova-errors": "^1.0",
+        "emilianotisato/nova-tinymce": "^1.2",
+        "eminiarts/nova-tabs": "^1.2.2",
+        "fideloper/proxy": "^4.2",
+        "francetv/lab": "*",
+        "fruitcake/laravel-cors": "^1.0",
+        "gabrieliuga/laravel-nova-field-iframe": "^1.0",
+        "gobrightspot/nova-detached-actions": "^1.1.1",
+        "gregoriohc/laravel-nova-theme-responsive": "^0.8.1",
+        "guzzlehttp/guzzle": "^6.3",
+        "infinety-es/nova-filemanager": "^2.8",
+        "inspheric/nova-indicator-field": "^1.43",
+        "inspheric/nova-url-field": "^1.4",
+        "klepak/nova-dynamic-page-title": "^1.0",
+        "laravel/framework": "^7.0",
+        "laravel/helpers": "^1.2",
+        "laravel/nova": "3.14.0",
+        "laravel/scout": "^8.3",
+        "mad-web/laravel-robots": "^2.1",
+        "madewithlove/laravel-nova-uuid-support": "^1.1",
+        "michielfb/laravel-nova-time-field": "^1.1",
+        "mtownsend/xml-to-array": "^1.0",
+        "optimistdigital/nova-drafts": "^1.1",
+        "optimistdigital/nova-multiselect-field": "^2.3",
+        "optimistdigital/nova-sortable": "^1.4",
+        "optimistdigital/nova-translatable": "^1.5",
+        "pmatseykanets/laravel-scout-postgres": "7.0.0",
+        "spatie/image": "^1.7",
+        "spatie/laravel-image-optimizer": "^1.6",
+        "spatie/laravel-permission": "^3.15",
+        "spatie/laravel-query-builder": "^3.0",
+        "spatie/laravel-responsecache": "^6.6",
+        "spatie/laravel-translatable": "^4.4",
+        "techouse/intl-date-time": "^1.5",
+        "thijssimonis/nova-list-card": "^1.0",
+        "unisharp/laravel-filemanager": "^2.2",
+        "vyuldashev/nova-permission": "^2.9",
+        "waynestate/nova-ckeditor4-field": "^0.7.0",
+        "ynacorp/nova-swatches": "^1.0"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://nova.laravel.com"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/Lab"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/LouisHrg/belongs-to-many-field-nova.git"
+        }
+    ],
+    "require-dev": {
+        "facade/ignition": "^2.0",
+        "fzaninotto/faker": "^1.9.1",
+        "laravel/telescope": "^3.5",
+        "mockery/mockery": "^1.3.1",
+        "nunomaduro/collision": "^4.1",
+        "phpunit/phpunit": "^8.5",
+        "sbine/route-viewer": "^0.0.7",
+        "stechstudio/laravel-php-cs-fixer": "^2.1"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "platform": {
+            "php": "7.4.33"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "classmap": [
+            "database/seeds/abstract",
+            "database/seeds",
+            "database/factories"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ]
+    }
+}

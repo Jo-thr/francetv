@@ -1,0 +1,53 @@
+{
+  "data": [
+    {
+      "id": "6f186d67-945e-4143-810b-ba827467c14f",
+      "type": "tags",
+      "lang": "fr",
+      "data": {
+        "name": "vallee131",
+        "slug": "descamps109",
+        "created_at": "2020-09-10T11:18:26.000000Z",
+        "updated_at": "2020-09-10T11:18:26.000000Z"
+      },
+      "meta": {
+        "slug": {
+          "en": "lemoine984",
+          "fr": "descamps109"
+        }
+      }
+    },
+    {
+      "id": "5c7aaa0b-fbaa-4c11-a0e1-29212558e3b9",
+      "type": "tags",
+      "lang": "fr",
+      "data": {
+        "name": "berthelot456",
+        "slug": "bailly245",
+        "created_at": "2020-09-10T11:18:26.000000Z",
+        "updated_at": "2020-09-10T11:18:26.000000Z"
+      },
+      "meta": {
+        "slug": {
+          "en": "dacosta392",
+          "fr": "bailly245"
+        }
+      }
+    }
+  ],
+  "links": {
+    "first": "http://api.localhost/api/tags?page=1",
+    "last": "http://api.localhost/api/tags?page=6",
+    "prev": null,
+    "next": "http://api.localhost/api/tags?page=2"
+  },
+  "meta": {
+    "current_page": 1,
+    "from": 1,
+    "last_page": 6,
+    "path": "http://api.localhost/api/tags",
+    "per_page": 15,
+    "to": 15,
+    "total": 80
+  }
+}

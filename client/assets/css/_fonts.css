@@ -1,0 +1,54 @@
+/* France TV Brown */
+
+/* Regular */
+@font-face {
+  font-family: 'France TV Brown';
+  src: url('../fonts/FranceTVBrown/FranceTVBrownTT-Regular.ttf')
+    format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Regular Italic */
+@font-face {
+  font-family: 'France TV Brown';
+  src: url('../fonts/FranceTVBrown/FranceTVBrownTT-Italic.ttf')
+    format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* Light */
+@font-face {
+  font-family: 'France TV Brown';
+  src: url('../fonts/FranceTVBrown/FranceTVBrownTT-Light.ttf')
+    format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Light Italic */
+@font-face {
+  font-family: 'France TV Brown';
+  src: url('../fonts/FranceTVBrown/FranceTVBrownTT-LightItalic.ttf')
+    format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Bold */
+@font-face {
+  font-family: 'France TV Brown';
+  src: url('../fonts/FranceTVBrown/FranceTVBrownTT-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Bold Italic */
+@font-face {
+  font-family: 'France TV Brown';
+  src: url('../fonts/FranceTVBrown/FranceTVBrownTT-BoldItalic.ttf')
+    format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}

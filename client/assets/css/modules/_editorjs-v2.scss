@@ -1,0 +1,131 @@
+.editor-js-content-v2 {
+  @apply flex flex-col font-light;
+
+  h2 {
+    @apply text-mobile-h2 tablet:text-desktop-h2 mb-6 font-bold tracking-normal;
+    @screen tablet {
+      @apply mb-8;
+    }
+  }
+
+  p {
+    @apply text-gray-darker;
+    font-size: 18px;
+    line-height: 28px;
+    @screen tablet {
+      @apply text-gray-darker;
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    a {
+      @apply underline hover:text-blue hover:cursor-pointer;
+    }
+  }
+
+  .quote {
+    @apply border-l-4 border-gray-light font-normal not-italic pl-7 text-gray-dark;
+    margin-top: 33px;
+    margin-bottom: 33px;
+    @screen tablet {
+      margin-top: 76px;
+      margin-bottom: 48px;
+    }
+
+    > *:first-child {
+      @apply text-dark pb-5;
+      font-size: 26px;
+      line-height: 34px;
+
+      &::before {
+        content: '\201C';
+      }
+
+      &::after {
+        @apply whitespace-pre;
+        content: '\201D\a';
+      }
+    }
+  }
+
+  .list-container {
+    @apply pl-3;
+
+    ul {
+      @apply list-disc list-outside pl-4;
+
+      li {
+        @apply mb-4 pl-6;
+      }
+    }
+
+    ol {
+      @apply list-decimal list-outside pl-4;
+
+      li {
+        @apply mb-4 pl-6;
+
+        &::marker {
+          @apply font-bold;
+        }
+      }
+    }
+  }
+
+  .image,
+  .iframe-container,
+  video {
+    @apply flex flex-col items-center self-center max-w-100vw pt-10 pb-10;
+    width: calc(100% + 4rem);
+
+    @screen tablet {
+      @apply relative w-6/5 pt-27 pb-20;
+    }
+
+    img {
+      @apply w-auto;
+
+      @screen tablet {
+        @apply w-full;
+      }
+    }
+
+    iframe {
+      @apply h-96 w-full;
+
+      @screen tablet {
+        @apply h-120;
+      }
+    }
+
+    figcaption {
+      @apply hidden mt-1 py-2 text-common-tag text-gray-dark bg-white tablet:flex tablet:ml-11;
+    }
+  }
+
+  &.credits {
+    h2 {
+      @apply mb-4;
+    }
+
+    .list-container {
+      @apply pl-6 mb-10 border-l border-gray border-dashed;
+
+      ul {
+        @apply pl-0 list-none;
+
+        li {
+          @apply pl-0 mb-3 leading-snug;
+
+          &:last-child {
+            @apply mb-0;
+          }
+        }
+      }
+
+      b {
+        @apply text-blue font-bold;
+      }
+    }
+  }
+}

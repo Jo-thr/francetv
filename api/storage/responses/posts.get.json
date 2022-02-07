@@ -1,0 +1,27 @@
+{
+  "id": "f7da94cb-b22a-410e-b6af-7ac6b365fd9f",
+  "type": "posts",
+  "lang": "fr",
+  "external": true,
+  "slug": "voluptatem-beatae-et-doloremque-maiores",
+  "data": {
+    "title": "Sint quia eveniet maxime. Consequatur aut et amet optio.",
+    "content": "",
+    "featured": "featured.png",
+    "url": null,
+    "heading": "infos",
+    "published_at": "2020-09-10T00:00:00.000000Z",
+    "created_at": "2020-09-10T11:18:26.000000Z",
+    "updated_at": "2020-09-10T11:18:26.000000Z"
+  },
+  "author": {
+    "name": "Maurice Vallee",
+    "departement": ""
+  },
+  "meta": {
+    "slug": {
+      "en": "accusantium-nesciunt-voluptate-nesciunt-fugiat-est-animi-fugit-quia",
+      "fr": "voluptatem-beatae-et-doloremque-maiores"
+    }
+  }
+}
