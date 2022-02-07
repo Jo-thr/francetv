@@ -1,0 +1,22 @@
+{
+  "name": "lab",
+  "version": "1.0.0",
+  "description": "FTVLab",
+  "main": "index.js",
+  "scripts": {
+    "test:php": "cd api && php artisan test && php artisan route:cache",
+    "test:nuxt": "cd client && npm run test",
+    "lint:js": "cd client && npm run lint:js",
+    "lint:php": "cd api && php artisan fixer:fix",
+    "test": "npm run test:nuxt && npm run test:php",
+    "lint": "npm run lint:js && npm run lint:php"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "husky": "^4.2.5"
+  },
+  "dependencies": {
+    "v-switch-case": "^1.0.3"
+  }
+}

@@ -1,0 +1,183 @@
+version: "3.4"
+
+services:
+  traefik:
+    container_name: ftvlab-traefik
+    image: traefik:2.2
+    command:
+      - --providers.docker.network=ftvlab
+    depends_on:
+      - dev-tls
+    ports:
+      - "80:80"
+      - "8080:8080"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./.docker/local/traefik/traefik.toml:/etc/traefik/traefik.toml:ro
+      - ./.docker/local/traefik/dynamic-conf.toml:/etc/traefik/dynamic-conf.toml:ro
+      - dev-certs:/certs:ro
+    networks:
+      ftvlab:
+        aliases:
+          - api.localhost
+          - front.localhost
+
+  php:
+    container_name: ftvlab-php
+    build:
+      context: .docker/local/php
+      args:
+        XDEBUG_INSTALL: ${XDEBUG_ENABLED}
+        BUILD: abcd123
+    environment:
+      COMPOSER_NOVA_USERNAME: ${COMPOSER_NOVA_USERNAME}
+      COMPOSER_NOVA_PASSWORD: ${COMPOSER_NOVA_PASSWORD}
+      PHP_IDE_CONFIG: "serverName=api.ftvlab.test"
+      XDEBUG_ENABLED: ${XDEBUG_ENABLED}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "9080:80"
+    depends_on:
+      - db
+    volumes:
+      - ./api:/home/ftvlab/api
+      - php_vendor:/home/ftvlab/api/vendor/:cached
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.php-http-ftvlab.rule=HostRegexp(`php.localhost`)
+      - traefik.http.routers.php-https-ftvlab.rule=HostRegexp(`php.localhost`)
+      - traefik.http.routers.php-http-ftvlab.entrypoints=web
+      - traefik.http.routers.php-https-ftvlab.entrypoints=web-secure
+      - traefik.http.routers.php-https-ftvlab.tls=true
+      - traefik.http.routers.php-http-ftvlab.middlewares=redirect@file
+    networks:
+      - ftvlab
+
+  front:
+    container_name: ftvlab-front
+    build:
+      context: ./client
+      dockerfile: ../.docker/local/front/Dockerfile
+      args:
+        BUILD: abcd123
+    volumes:
+      - ./client:/home/ftvlab/client:cached
+      - front_node_modules:/home/ftvlab/client/node_modules/
+      - front_dot_nuxt:/home/ftvlab/client/.nuxt/
+    environment:
+        HOST: 0.0.0.0
+    depends_on:
+      - web
+    ports:
+      - "3000:3000"
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.front-http-ftvlab.rule=HostRegexp(`front.localhost`)
+      - traefik.http.routers.front-https-ftvlab.rule=HostRegexp(`front.localhost`)
+      - traefik.http.routers.front-http-ftvlab.entrypoints=web
+      - traefik.http.routers.front-https-ftvlab.entrypoints=web-secure
+      - traefik.http.routers.front-https-ftvlab.tls=true
+      - traefik.http.routers.front-http-ftvlab.middlewares=redirect@file
+    networks:
+      - ftvlab
+
+  pgweb:
+    container_name: ftvlab-pgweb
+    image: sosedoff/pgweb
+    restart: always
+    ports:
+      - "9090:8081"
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: "postgres://ftvlab:ftvlab@db:5432/ftvlab?sslmode=disable"
+    links:
+      - "db:postgres"
+    networks:
+      - ftvlab
+
+  dev-tls:
+    build:
+      context: ./.docker/local/dev-tls
+    container_name: dev_tls_ftvlab
+    volumes:
+      - dev-certs:/certs:rw
+
+  web:
+    container_name: ftvlab-web
+    image: nginx:1.15-alpine
+    depends_on:
+      - php
+    ports:
+      - "9999:80"
+    environment:
+        HOST: 0.0.0.0
+    volumes:
+      - ./api/public:/home/ftvlab/api/public:ro
+      - ./.docker/local/nginx:/etc/nginx/conf.d:ro
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.api-http-ftvlab.rule=HostRegexp(`api.localhost`)
+      - traefik.http.routers.api-https-ftvlab.rule=HostRegexp(`api.localhost`)
+      - traefik.http.routers.api-http-ftvlab.entrypoints=web
+      - traefik.http.routers.api-https-ftvlab.entrypoints=web-secure
+      - traefik.http.routers.api-https-ftvlab.tls=true
+      - traefik.http.routers.api-http-ftvlab.middlewares=redirect@file
+    networks:
+      - ftvlab
+
+  db:
+    container_name: ftvlab-db
+    image: postgres:10-alpine
+    ports:
+      - "5432:5432"
+    volumes:
+      - database:/var/lib/postgresql/data:rw
+    environment:
+      - POSTGRES_DB=ftvlab
+      - POSTGRES_USER=ftvlab
+      - POSTGRES_PASSWORD=ftvlab
+    networks:
+      - ftvlab
+
+  db-test:
+    container_name: ftvlab-db-test
+    image: postgres:10-alpine
+    ports:
+      - "5433:5432"
+    volumes:
+      - database-test:/var/lib/postgresql/data:rw
+    environment:
+      - POSTGRES_DB=ftvlab
+      - POSTGRES_USER=ftvlab
+      - POSTGRES_PASSWORD=ftvlab
+    networks:
+      - ftvlab
+
+  maildev:
+    container_name: ftvlab-maildev
+    image: maildev/maildev
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.maildev-http-ftvlab.rule=HostRegexp(`maildev.localhost`)
+      - traefik.http.routers.maildev-https-ftvlab.rule=HostRegexp(`maildev.localhost`)
+      - traefik.http.routers.maildev-http-ftvlab.entrypoints=web
+      - traefik.http.routers.maildev-https-ftvlab.entrypoints=web-secure
+      - traefik.http.routers.maildev-https-ftvlab.tls=true
+      - traefik.http.services.maildev.loadbalancer.server.port=80
+    networks:
+      - ftvlab
+
+volumes:
+  database: {}
+  database-test: {}
+  dev-certs: {}
+  php_vendor: {}
+  front_node_modules: {}
+  front_dot_nuxt: {}
+
+networks:
+  ftvlab:
+    external: true
